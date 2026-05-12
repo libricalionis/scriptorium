@@ -1,0 +1,493 @@
+/* =============================================================================
+   Scriptorium CSS
+   -----------------------------------------------------------------------------
+   Minimal literary stylesheet for WordPress.
+   Designed for atmospheric fiction, serialized narratives,
+   pericopes, and book-like typography.
+
+   Author: Calion
+   License: MIT License
+   Repository: https://github.com/libricalionis/scriptorium
+
+   Copyright (c) 2026 Calion
+
+   Permission is hereby granted, free of charge, to any person obtaining
+   a copy of this software and associated documentation files (the "Software"),
+   to deal in the Software without restriction, including without limitation
+   the rights to use, copy, modify, merge, publish, distribute, sublicense,
+   and/or sell copies of the Software, and to permit persons to whom the
+   Software is furnished to do so, subject to the following conditions:
+
+   The above copyright notice and this permission notice shall be included
+   in all copies or substantial portions of the Software.
+
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+   OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+   THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+   DEALINGS IN THE SOFTWARE.
+   ============================================================================= */
+
+
+/* =============================================================================
+   Global variables
+   -----------------------------------------------------------------------------
+   Book palette:
+   - solis   : RGB(198,158,74)
+   - sanguis : RGB(160,54,60)
+   - nebula  : RGB(86,150,182)
+   ============================================================================= */
+
+:root {
+  --solis: rgb(198, 158, 74);
+  --sanguis: rgb(160, 54, 60);
+  --nebula: rgb(86, 150, 182);
+
+  --book-text: rgb(43, 43, 43);
+  --book-paper: rgb(253, 251, 247);
+  --book-muted: rgb(70, 70, 70);
+
+  --book-content-width: 645px;
+  --book-indent: 2em;
+
+  --sms-shift-a: 0em;
+  --sms-shift-b: 2em;
+  --sms-max-shift: var(--sms-shift-b);
+}
+
+
+/* =============================================================================
+   Fonts
+   ============================================================================= */
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  src: url('/wp-content/uploads/fonts/libertinus/LibertinusSerif-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  src: url('/wp-content/uploads/fonts/libertinus/LibertinusSerif-Italic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  src: url('/wp-content/uploads/fonts/libertinus/LibertinusSerif-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libertinus Serif';
+  src: url('/wp-content/uploads/fonts/libertinus/LibertinusSerif-BoldItalic.woff2') format('woff2');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+/* =============================================================================
+   Base typography
+   ============================================================================= */
+
+html,
+body,
+p,
+li,
+blockquote,
+.wp-site-blocks,
+.wp-block-post-content,
+.entry-content,
+.editor-styles-wrapper {
+  font-family: 'Libertinus Serif', Georgia, serif !important;
+  color: var(--book-text);
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures discretionary-ligatures contextual !important;
+  font-feature-settings: "liga" 1, "clig" 1, "dlig" 1, "calt" 1 !important;
+}
+
+body,
+.editor-styles-wrapper {
+  background-color: var(--book-paper);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Novel-like paragraph rhythm
+   -----------------------------------------------------------------------------
+   Paragraph indentation is intentionally disabled.
+   Spacing is handled through controlled vertical rhythm.
+   ----------------------------------------------------------------------------- */
+
+p,
+.wp-block-paragraph {
+  margin: 0 !important;
+  margin-block: 0 !important;
+  text-indent: 0 !important;
+}
+
+.is-layout-flow > p + p,
+.entry-content p + p,
+.wp-block-post-content p + p {
+  margin-top: 0.3em !important;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Prevent inherited indentation after structural blocks
+   ----------------------------------------------------------------------------- */
+
+h1 + p,
+h2 + p,
+h3 + p,
+hr + p,
+blockquote + p,
+.wp-block-heading + .wp-block-paragraph,
+.wp-block-quote + .wp-block-paragraph,
+.wp-block-separator + .wp-block-paragraph {
+  text-indent: 0;
+}
+
+
+/* =============================================================================
+   Links
+   ============================================================================= */
+
+a,
+a:visited {
+  color: var(--sanguis);
+  text-decoration-color: rgba(160, 54, 60, 0.45);
+}
+
+a:hover,
+a:focus {
+  color: var(--sanguis);
+  text-decoration-color: rgba(160, 54, 60, 0.9);
+}
+
+
+/* =============================================================================
+   Chapter titles
+   ============================================================================= */
+
+h1,
+.wp-block-post-title {
+  font-family: 'Libertinus Serif', Georgia, serif !important;
+  font-weight: 700;
+  font-size: 2.2em;
+  line-height: 1.2;
+  color: var(--sanguis);
+  text-align: center;
+  margin-top: 1.8em;
+  margin-bottom: 1.2em;
+}
+
+
+/* =============================================================================
+   Secondary titles / scenes
+   -----------------------------------------------------------------------------
+   Approximate equivalent of \section
+   ============================================================================= */
+
+h2 {
+  font-family: 'Libertinus Serif', Georgia, serif !important;
+  font-size: 1.35em;
+  font-weight: 400;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  color: var(--sanguis);
+  text-align: center;
+  margin-top: 1.2em;
+  margin-bottom: 0.9em;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Libertinus Serif', Georgia, serif !important;
+  color: var(--sanguis);
+  line-height: 1.25;
+}
+
+
+/* =============================================================================
+   Scene separator
+   -----------------------------------------------------------------------------
+   Equivalent of \scenebreak
+   ============================================================================= */
+
+hr,
+.wp-block-separator {
+  border: none;
+  height: 1px;
+  width: min(
+    calc(var(--book-content-width) * 0.5),
+    50%
+  );
+  background-color: var(--solis);
+
+  margin: 1.6em auto 1.2em auto !important;
+}
+
+p + hr,
+.wp-block-paragraph + .wp-block-separator {
+  margin-top: 1.8em !important;
+}
+
+hr + p,
+.wp-block-separator + .wp-block-paragraph {
+  margin-top: 1.1em !important;
+}
+
+
+/* =============================================================================
+   Standard quotations
+   ============================================================================= */
+
+blockquote,
+.wp-block-quote {
+  margin: 1.5em 2em;
+  padding: 0;
+  border-left: none;
+  color: var(--book-muted);
+  font-style: italic;
+}
+
+blockquote p,
+.wp-block-quote p {
+  text-indent: 0 !important;
+}
+
+
+/* =============================================================================
+   Figure name highlighting
+   ============================================================================= */
+
+.figura {
+  color: var(--sanguis);
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+}
+
+
+/* =============================================================================
+   Scriptorium notes + Calion notes
+   -----------------------------------------------------------------------------
+   Aligned to the effective content width of the theme.
+   ============================================================================= */
+
+
+/* -----------------------------------------------------------------------------
+   Case 1: class applied directly to a paragraph
+   ----------------------------------------------------------------------------- */
+
+p.calion-note,
+p.scriptorium-note {
+  display: block !important;
+
+  width: min(
+    calc(var(--book-content-width) - (2 * var(--book-indent))),
+    calc(100% - 2em)
+  ) !important;
+
+  margin: 1em auto 0.35em auto !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  box-sizing: border-box !important;
+  font-style: italic !important;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Case 2: class applied to a Group block
+   ----------------------------------------------------------------------------- */
+
+.wp-block-group.calion-note,
+.wp-block-group.scriptorium-note {
+  width: min(
+    calc(var(--book-content-width) - (2 * var(--book-indent))),
+    calc(100% - 2em)
+  ) !important;
+
+  margin: 1em auto 0.35em auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+
+/* Internal paragraphs */
+
+.wp-block-group.calion-note p,
+.wp-block-group.scriptorium-note p {
+  margin: 0 !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  font-style: italic !important;
+}
+
+
+/* Spacing between internal paragraphs */
+
+.wp-block-group.calion-note p + p,
+.wp-block-group.scriptorium-note p + p {
+  margin-top: 0.2em !important;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Neutralize inherited paragraph indentation
+   ----------------------------------------------------------------------------- */
+
+p.calion-note + p,
+p.scriptorium-note + p,
+.wp-block-group.calion-note p + p,
+.wp-block-group.scriptorium-note p + p {
+  text-indent: 0 !important;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Automatic Calion signature
+   ----------------------------------------------------------------------------- */
+
+p.calion-note::after,
+.wp-block-group.calion-note::after {
+  content: "Calion";
+  display: block;
+  margin-top: 0.5em;
+  text-align: right;
+  font-style: normal;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
+  color: var(--sanguis);
+}
+
+
+/* =============================================================================
+   Scriptorium quotes
+   -----------------------------------------------------------------------------
+   Short left-aligned message in italics with moderate indentation.
+   ============================================================================= */
+
+.scriptorium-quote {
+  display: block !important;
+
+  width: min(
+    calc(var(--book-content-width) - (2 * var(--book-indent))),
+    calc(100% - 2em)
+  ) !important;
+
+  margin: 1em auto 0.35em auto !important;
+  padding: 0 !important;
+  text-indent: 0 !important;
+  box-sizing: border-box !important;
+  color: var(--sanguis);
+  font-style: italic;
+}
+
+.scriptorium-quote,
+.scriptorium-quote p {
+  text-indent: 0 !important;
+}
+
+.scriptorium-quote p + p {
+  margin-top: 0.25em !important;
+}
+
+
+/* =============================================================================
+   SMS
+   -----------------------------------------------------------------------------
+   Alternating horizontal offsets simulate conversational rhythm.
+   ============================================================================= */
+
+.sms-a,
+.sms-b {
+  display: block;
+  width: min(
+    calc(var(--book-content-width) - var(--sms-max-shift) - var(--book-indent)),
+    calc(100% - 2em)
+  ) !important;
+  margin: 1.2em 0;
+  padding: 0;
+  text-indent: 0;
+  box-sizing: border-box;
+  color: var(--sanguis);
+  font-style: italic;
+}
+
+.sms-a {
+  transform: translateX(var(--sms-shift-a));
+}
+
+.sms-b {
+  transform: translateX(var(--sms-shift-b));
+}
+
+
+/* =============================================================================
+   Mobile adjustments
+   ============================================================================= */
+
+@media (max-width: 700px) {
+  p.calion-note,
+  p.scriptorium-note,
+  .wp-block-group.calion-note,
+  .wp-block-group.scriptorium-note,
+  .scriptorium-quote,
+  .sms-a,
+  .sms-b {
+    width: calc(100% - 2em) !important;
+    transform: none !important;
+  }
+}
+
+
+/* =============================================================================
+   Small refinements
+   ============================================================================= */
+
+em,
+i {
+  font-style: italic;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+small,
+.has-small-font-size {
+  color: var(--book-muted);
+}
+
+
+/* -----------------------------------------------------------------------------
+   Optional color accents
+   ----------------------------------------------------------------------------- */
+
+.sanguis {
+  color: var(--sanguis);
+}
+
+.solis {
+  color: var(--solis);
+}
+
+.nebula {
+  color: var(--nebula);
+}
