@@ -34,6 +34,6 @@ historic ligatures, quiet rubrication, moderate spacing, minimal ornamentation, 
 
 ## Repository structure
 
-- [`latex/`](latex/) — LaTeX class, example document, and documentation
-- [`wordpress/`](wordpress/) — WordPress literary stylesheet
+- [`latex/`](latex/) — LaTeX class and examples
+- [`wordpress/`](wordpress/) — WordPress stylesheet and examples
 - [`assets/`](assets/) — Shared visual assets
