@@ -27,12 +27,7 @@ Originally developed for *Le Livre des Ombres* and *L'Angle Mort*.
 
 ## Installation
 
-Copy:
-
-```text
-scriptorium.cls
-```
-
+Copy [`scriptorium.cls`](scriptorium.cls)
 into:
 - your project directory,
 - or your local TeX tree.
@@ -207,16 +202,18 @@ Automatically generates:
 #### Generic note
 
 ```latex
-\scriptoriumnote{
-Text...
+\scriptoriumnote
+{
+  Text...
 }
 ```
 
 #### Signed Calion note
 
 ```latex
-\calionnote{
-Text...
+\calionnote
+{
+  Text...
 }
 ```
 
@@ -225,8 +222,9 @@ Text...
 ### Narrative quotations
 
 ```latex
-\scriptoriumquote{
-Text...
+\scriptoriumquote
+{
+  Text...
 }
 ```
 
@@ -288,7 +286,7 @@ The goal is literary rhythm and long-form readability.
 latex/
 ├── README.md
 ├── scriptorium.cls
-├── example.tex
+└── example.tex
 ```
 
 ---
