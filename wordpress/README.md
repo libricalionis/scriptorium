@@ -4,7 +4,7 @@ Minimal literary stylesheet for WordPress.
 
 Scriptorium CSS is designed for atmospheric fiction, serialized narratives, pericopes, and book-like typography. It aims to reproduce part of the rhythm and visual coherence of printed literary layouts directly inside the WordPress block editor.
 
-The stylesheet was originally developed for *Le Livre des Ombres* and *L'Angle Mort*.
+The stylesheet was originally developed for *Le Livre des Ombres*.
 
 ---
 
