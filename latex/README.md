@@ -13,6 +13,7 @@ Originally developed for *Le Livre des Ombres* and *L'Angle Mort*.
 - built on top of `memoir`
 - pocket and hardcover layouts
 - automatic title pages
+- optional silent mode for submission copies
 - literary chapter and scene styling
 - drop caps / lettrines
 - scene separators
@@ -158,6 +159,24 @@ Continuous flow between scenes (default).
 
 ---
 
+### Silent mode
+
+#### `silent`
+
+Suppresses publication-related metadata from the liminary page.
+
+```latex
+\documentclass[silent]{scriptorium}
+```
+
+When enabled, Scriptorium hides:
+- the serialized publication notice,
+- the copyright line.
+
+The publication year and contact email remain visible.
+
+---
+
 ## Available commands
 
 ### Title metadata
@@ -186,6 +205,8 @@ Continuous flow between scenes (default).
 Automatically generates:
 - title page,
 - liminary publication page.
+
+With the `silent` option, publication and copyright lines are omitted from the liminary page.
 
 ---
 
