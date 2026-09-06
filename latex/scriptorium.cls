@@ -49,6 +49,9 @@
 \newif\ifscenepagebreak
 \scenepagebreakfalse
 
+\newif\ifscriptoriumsilent
+\scriptoriumsilentfalse
+
 \def\scriptorium@lang{french}
 \def\scriptorium@classoptions{11pt,twoside,openright,final}
 
@@ -62,6 +65,9 @@
   \scriptoriumpocketfalse
   \def\scriptorium@classoptions{11pt,twoside,openright,final}%
 }
+
+% Silent edition (no serial publication / copyright notice)
+\DeclareOption{silent}{\scriptoriumsilenttrue}
 
 % Language
 \DeclareOption{french}{\def\scriptorium@lang{french}}
@@ -466,23 +472,26 @@
       \vspace{0.5em}
     }
 
-    \ifdefstring{\scriptorium@lang}{french}
-      {Publié en feuilleton sur}
-      {Published as a serial on}
-    \ \texttt{\color{nebula}\scriptorium@website}\par
+		\ifscriptoriumsilent
+		\else
+			\ifdefstring{\scriptorium@lang}{french}
+			{Publié en feuilleton sur}
+			{Published as a serial on}
+			\ \texttt{\color{nebula}\scriptorium@website}\par
 
-    \vspace{0.5em}
+			\vspace{0.5em}
 
-    \ifdefempty{\scriptorium@copyright}
-    {%
-      \textcopyright\ \scriptorium@year\
-      \scriptorium@author\ / LibriCalionis\par
-    }
-    {%
-      \scriptorium@copyright\par
-    }
+			\ifdefempty{\scriptorium@copyright}
+			{%
+				\textcopyright\ \scriptorium@year\
+				\scriptorium@author\ / LibriCalionis\par
+			}
+			{%
+				\scriptorium@copyright\par
+			}
 
-    \vspace{0.5em}
+			\vspace{0.5em}
+		\fi
 
     \ifdefstring{\scriptorium@lang}{french}
       {Pour toute correspondance :}
