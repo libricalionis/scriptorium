@@ -394,13 +394,17 @@ p.calion-note::after,
   padding: 0 !important;
   text-indent: 0 !important;
   box-sizing: border-box !important;
-  color: var(--sanguis);
-  font-style: italic;
 }
 
 .scriptorium-quote,
 .scriptorium-quote p {
+  color: var(--sanguis) !important;
+  font-style: italic !important;
   text-indent: 0 !important;
+}
+
+.scriptorium-quote p {
+  margin: 0 !important;
 }
 
 .scriptorium-quote p + p {
