@@ -4,7 +4,7 @@ Minimal literary class built on top of `memoir`.
 
 Scriptorium is designed for atmospheric fiction, serialized narratives, pericopes, and book-like typography. It provides a restrained editorial style inspired by late nineteenth-century printing, while remaining lightweight and practical for modern writing workflows.
 
-Originally developed for *Le Livre des Ombres* and *L'Angle Mort*.
+Originally developed for *Le Livre des Ombres*.
 
 ---
 
