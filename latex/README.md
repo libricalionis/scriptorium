@@ -56,27 +56,24 @@ XeLaTeX or LuaLaTeX are recommended for:
 ```latex
 \documentclass[hardcover,french,color]{scriptorium}
 
-\title{L'Angle Mort}
+\title{Le Grand Œuvre}
 \author{Calion}
-
 \publicationyear{2026}
-
-\website{libricalionis.com}
-\contactemail{libri.calionis@gmail.com}
 
 \begin{document}
 
-  \maketitle
+\maketitle
+\mainmatter
 
-  \mainmatter
+\chapter{La transmutation}
 
-  \chapter{Le sens est là, personne ne le voit}
+\section{Le laboratoire}
 
-  \section{La gare}
+\lettrine{B}{althazar} avait consacré vingt ans à transformer le plomb en or.
 
-  \lettrine{L}{a} pluie tombait sur les verrières de la gare. Je restai un moment sous l'horloge.
+Ce matin-là, enfin, quelque chose brillait au fond du creuset.
 
-  \theend
+\theend
 
 \end{document}
 ```
